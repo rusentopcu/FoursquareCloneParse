@@ -29,8 +29,25 @@ class AddPlaceVC: UIViewController,UIImagePickerControllerDelegate,UINavigationC
     
     
     @IBAction func nextButtonClicked(_ sender: Any) {
-        
         performSegue(withIdentifier: "toMapVC", sender: nil)
+        
+        if placeNameText.text != "" && placeTypeText.text != "" && placeAtmosphereText.text != "" {
+            
+            if let chosenImage = placeImageView.image {
+                
+                let placeModel = PlaceModel.sharedInstance
+                placeModel.placeName = placeNameText.text!
+                placeModel.placeType = placeTypeText.text!
+                placeModel.placeAtmosphere = placeAtmosphereText.text!
+                placeModel.placeImage = chosenImage
+            }
+            performSegue(withIdentifier: "toMapVC", sender: nil)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Place name/ Type/ Atmosphere?", preferredStyle: UIAlertController.Style.alert)
+            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            alert.addAction(okButton)
+            present(alert, animated: true, completion: nil)
+        }
         
     }
     

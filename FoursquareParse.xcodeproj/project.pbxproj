@@ -17,6 +17,7 @@
 		54EF8CF5241B616F00DB4038 /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EF8CF4241B616F00DB4038 /* AddPlaceVC.swift */; };
 		54EF8CF7241B63B600DB4038 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EF8CF6241B63B600DB4038 /* MapVC.swift */; };
 		54EF8CF9241B6BD500DB4038 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EF8CF8241B6BD500DB4038 /* DetailsVC.swift */; };
+		54EF8CFB241B6F9500DB4038 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EF8CFA241B6F9500DB4038 /* Singleton.swift */; };
 		FFE42E878BF6245573536F2A /* Pods_FoursquareParse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF511A6BDA8D066166033F8D /* Pods_FoursquareParse.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		54EF8CF4241B616F00DB4038 /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
 		54EF8CF6241B63B600DB4038 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		54EF8CF8241B6BD500DB4038 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		54EF8CFA241B6F9500DB4038 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		DF511A6BDA8D066166033F8D /* Pods_FoursquareParse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoursquareParse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41FB265530F5761FF5CBD3A /* Pods-FoursquareParse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareParse.release.xcconfig"; path = "Target Support Files/Pods-FoursquareParse/Pods-FoursquareParse.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 				54516DEF24181EB700BDC5D1 /* ViewController.swift */,
 				54EF8CF2241A255200DB4038 /* PlacesVC.swift */,
 				54516DF124181EB700BDC5D1 /* Main.storyboard */,
+				54EF8CFA241B6F9500DB4038 /* Singleton.swift */,
 				54EF8CF8241B6BD500DB4038 /* DetailsVC.swift */,
 				54EF8CF6241B63B600DB4038 /* MapVC.swift */,
 				54EF8CF4241B616F00DB4038 /* AddPlaceVC.swift */,
@@ -223,6 +226,7 @@
 				54516DEC24181EB700BDC5D1 /* AppDelegate.swift in Sources */,
 				54EF8CF3241A255200DB4038 /* PlacesVC.swift in Sources */,
 				54EF8CF9241B6BD500DB4038 /* DetailsVC.swift in Sources */,
+				54EF8CFB241B6F9500DB4038 /* Singleton.swift in Sources */,
 				54EF8CF5241B616F00DB4038 /* AddPlaceVC.swift in Sources */,
 				54516DEE24181EB700BDC5D1 /* SceneDelegate.swift in Sources */,
 			);
