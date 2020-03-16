@@ -31,6 +31,30 @@ class MapVC: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate {
         
         navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: ">Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonClicked))
         
+        //MARK: - show selected location
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(chooseLocation(gestureRecognizer:)))
+        gestureRecognizer.minimumPressDuration = 3
+        mapView.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    //MARK: - Choose Location func
+    @objc func chooseLocation(gestureRecognizer:UIGestureRecognizer) {
+        if gestureRecognizer.state == .began {
+            
+            let touches = gestureRecognizer.location(in: self.mapView)
+            let coordinates = self.mapView.convert(touches, toCoordinateFrom: self.mapView)
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordinates
+            annotation.title = PlaceModel.sharedInstance.placeName
+            annotation.subtitle = PlaceModel.sharedInstance.placeType
+            self.mapView.addAnnotation(annotation)
+            
+            PlaceModel.sharedInstance.placeLatitude = String(coordinates.latitude)
+            PlaceModel.sharedInstance.placeLongitude = String(coordinates.longitude)
+        }
+        
+        
     }
     
     //MARK: -Location func
