@@ -92,7 +92,7 @@ class ViewController: UIViewController {
             user.password = passwordText.text!
             user.signUpInBackground() { (success, error) in
                 if error != nil {
-                    print(error?.localizedDescription)
+                    print(error?.localizedDescription ?? "Error")
                 }
                 else {
                     self.performSegue(withIdentifier: "toPlacesVC", sender: nil)

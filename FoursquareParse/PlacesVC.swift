@@ -15,7 +15,7 @@ class PlacesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     var placeNameArray = [String]()
     var placeIdArray = [String]()
-    
+    var selectedPlaceId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,18 @@ class PlacesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItem.Style.plain, target: self, action: #selector(logoutButtonClicked))
         
         getDataFromParse()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.chosenPlaceId = selectedPlaceId
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPlaceId = placeIdArray[indexPath.row]
+        self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
     
     func getDataFromParse() {
