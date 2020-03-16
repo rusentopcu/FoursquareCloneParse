@@ -115,11 +115,7 @@
                         <outlet property="tableView" destination="qKF-u3-sGO" id="ETE-kc-ewk"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignUpVC" modalPresentationStyle="fullScreen" id="2TZ-6n-2SN"/>
                         <segue destination="a1h-Tg-bfP" kind="show" identifier="AddPlaceVC" id="OGE-VL-1zC"/>
-                        <segue destination="xgi-1d-1Y2" kind="show" id="9GG-xf-v51">
-                            <string key="identifier" base64-UTF8="YES">
-dG8QRGV0YWlsc1ZDA
-</string>
-                        </segue>
+                        <segue destination="xgi-1d-1Y2" kind="show" identifier="toDetailsVC" id="9GG-xf-v51"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8JJ-Mk-RbY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -196,6 +192,7 @@ dG8QRGV0YWlsc1ZDA
                     <connections>
                         <outlet property="detailsAtmosphereLabel" destination="biR-QQ-fwx" id="tLc-oq-5i9"/>
                         <outlet property="detailsImageView" destination="q3j-cR-a7W" id="dfy-Jy-JIe"/>
+                        <outlet property="detailsMapView" destination="bvX-be-g3b" id="ajP-SV-dHC"/>
                         <outlet property="detailsNameLabel" destination="tY4-J7-wD2" id="W7b-TA-5Z4"/>
                         <outlet property="detailsTypeLabel" destination="9oe-D1-OF2" id="mzs-5a-76w"/>
                     </connections>

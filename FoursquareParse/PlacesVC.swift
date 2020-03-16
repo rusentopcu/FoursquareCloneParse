@@ -32,17 +32,7 @@ class PlacesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         getDataFromParse()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetailsVC" {
-            let destinationVC = segue.destination as! DetailsVC
-            destinationVC.chosenPlaceId = selectedPlaceId
-        }
-    }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedPlaceId = placeIdArray[indexPath.row]
-        self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
-    }
     
     func getDataFromParse() {
         let query = PFQuery(className: "Places")
@@ -68,6 +58,7 @@ class PlacesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             }
         }
     }
+    
     
         @objc func makeAlert(titleInput:String, mesajInput: String) {
         let alert = UIAlertController(title: titleInput, message: mesajInput, preferredStyle: UIAlertController.Style.alert)
@@ -101,6 +92,18 @@ class PlacesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 self.performSegue(withIdentifier: "toSignUpVC", sender: nil)
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.chosenPlaceId = selectedPlaceId
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPlaceId = placeIdArray[indexPath.row]
+        self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
 
 }
